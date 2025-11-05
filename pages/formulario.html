@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opinión sobre Albion Online</title>
+  <link rel="stylesheet" href="css/formulario.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+<div class="container-fluid">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark rounded">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Albion Online WebSite</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <a class="nav-link" href="../index.html">Inicio</a>
+          <li class="nav-item"><a class="nav-link" href="https://en.wikipedia.org/wiki/Albion_Online">WIKI ALBION ONLINE</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/pages/formulario.html">Formulario de opinión</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mt-5">
+    <div class="card shadow p-4">
+      <h2 class="form-title">Tu Opinión sobre Albion Online</h2>
+
+      <form action="https://formspree.io/f/mjkpqjvo" method="POST">
+
+        <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre y apellido</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="ejemplo@gmail.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="opinion" class="form-label">¿Qué te parece Albion Online?</label>
+          <textarea class="form-control" id="opinion" name="opinion" rows="4" placeholder="Escribe tu opinión aquí..." required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="range4" class="form-label">Valora del 0 al 10</label>
+          <input type="range" class="form-range" name="valoracion" min="0" max="10" value="5" id="range4" required>
+          <output for="range4" id="rangeValue" aria-hidden="true"></output>
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100 mt-3">Enviar opinión</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-dark text-white text-center rounded p-3 mt-4">
+  © 2025 Institut Barres i Ones - Álex Fernández Hernández 2n SMX A
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const rangeInput = document.getElementById('range4');
+  const rangeOutput = document.getElementById('rangeValue');
+
+  rangeOutput.textContent = rangeInput.value;
+
+  rangeInput.addEventListener('input', function() {
+      rangeOutput.textContent = this.value;
+  });
+</script>
+
+</body>
+</html>
